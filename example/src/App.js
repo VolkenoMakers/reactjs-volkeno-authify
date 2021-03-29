@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { ExampleComponent } from 'reactjs-volkeno-authify'
+import { AuthLogin } from 'reactjs-volkeno-authify'
+import { AuthRegister } from 'reactjs-volkeno-authify'
 import 'reactjs-volkeno-authify/dist/index.css'
 // 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <AuthLogin />
 }
 
 export default App
