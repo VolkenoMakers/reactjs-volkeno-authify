@@ -5,7 +5,7 @@ import Register from './components/Register/Register'
 
 export const AuthLogin = () => {
   return (
-    <div className="hhh">
+    <div className="">
       <Login />
     </div>
   )
@@ -13,7 +13,7 @@ export const AuthLogin = () => {
 
 export const AuthRegister = () => {
   return (
-    <div className="hhh">
+    <div className="">
       <Register />
     </div>
   )
