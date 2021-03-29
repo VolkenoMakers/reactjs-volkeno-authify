@@ -1,9 +1,129 @@
 /* add css module styles here (optional) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
+/* Bootstrap 4.6 */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous");
+
+html, body, #root { height: 100% ;}
+
+#root{ height: 100%; }
+
+.h_full{ height: 100%; }
+.w_full{ width: 100%; }
+
+.formContainer{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+.formLoginRegister{
+  background: #FFFFFF;
+  box-shadow: 2px 5px 50px rgba(0, 0, 0, 0.1);
+  /* padding: 4rem; */
+  width: 100%;
+}
+.formLoginRegisterTitle{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 60px;
+  text-align: center;
+  display: block;
+  color: rgba(0, 0, 0, 0.75);
+}
+.formLoginRegisterInput{
+  border: 1px solid #1F497D;
+  box-sizing: border-box;
+  border-radius: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.75px;
+  color: rgba(0, 0, 0, 0.75);
+  height: 50px;
+  background-color: #ffffff;
+  padding-left: 3rem;
+}
+.formLoginRegisterPrepend{
+  top: 11px;
+  position: absolute;
+  left: 24px;
+  color: #1F497D;
+}
+.formLoginRegisterPrepend svg{
+  width: 15px;
+}
+.formLoginRegisterForgotPasswordLink{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 0px;
+  text-align: right;
+  letter-spacing: 0.75px;
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  transition: .2s ease-in-out;
+}
+
+.formLoginRegisterForgotPasswordLink:hover{
+  text-decoration: none;
+  color: #1F497D;
+  transition: .2s ease-in-out;
+}
+.formLoginRegisterbtnPrimary{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  display: block;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.75px;
+  color: #F7F7FC;
+  background: #F39200;
+  border-radius: 40px;
+  padding: .7rem;
+  width: 100%;
+  border: 1px solid #F39200;
+  transition: .2s ease-in-out;
+  box-shadow: 2px 5px 50px rgba(0, 0, 0, 0.1);
+}
+.formLoginRegisterbtnPrimary:hover, .formLoginRegisterbtnPrimary:focus{
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  color: #F39200;
+  transition: .2s ease-in-out;
+}
+.formLoginRegisterFooter{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
   text-align: center;
 }
+.formLoginRegisterFooterLink{
+  font-weight: 700;
+  transition: .2s ease-in-out;
+  color: inherit;
+}
+.formLoginRegisterFooterLink:hover{
+  color: #F39200;
+  text-decoration: none;
+  transition: .2s ease-in-out;
+}
+
+
+
+
+
+
+

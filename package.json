@@ -49,5 +49,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "feather-icons-react": "^0.4.3",
+    "react-router-dom": "^5.2.0"
+  }
 }

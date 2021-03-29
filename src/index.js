@@ -1,6 +1,8 @@
 import React from 'react'
-import styles from './styles.module.css'
+import Login from './Components/Login'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export const Authentication = ( props ) => {
+  return(
+    <Login />
+  )
 }
