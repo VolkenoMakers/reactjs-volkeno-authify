@@ -5,13 +5,16 @@ import FeatherIcon from 'feather-icons-react'
 const Login = (props) => {
   return (
     <div className={'container ' + styles.formContainer}>
-      <div className={'row ' + styles.w_full}>
+      <div className={'row py-5 ' + styles.w_full}>
         <div className={`col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto ${props.formContainerClassName}`}>
           <div className={`p-sm-5 py-5 px-4 ${styles.formLoginRegister} ${props.formClassName}`}>
-            {props.logoFormSrc ?
-              <span className={`${styles.logo_form} ${props.logoFormClassName} `} style={{ background: `url(${props.logoFormSrc})` }}></span>
+            {props.useLogo ?
+              props.logoFormSrc ?
+                <span className={`${styles.logo_form} ${props.logoFormClassName} `} style={{ background: `url(${props.logoFormSrc})` }}></span>
+                :
+                <span className={`${styles.logo_form} ${props.logoFormClassName} `} style={{ background: `url(http://via.placeholder.com/200/C4C9C7/FFFFFF)` }}></span>
               :
-              <span className={`${styles.logo_form} ${props.logoFormClassName} `} style={{ background: `url(http://via.placeholder.com/200/C4C9C7/FFFFFF)` }}></span>
+              <span></span>
             }
             <span className={`mb-sm-4 mb-3 ${styles.formLoginRegisterTitle} ${props.titleFormClassName}`}>
               {props.titleTextLabel ?
@@ -22,17 +25,17 @@ const Login = (props) => {
             </span>
             <div className='form-group position-relative'>
               <span className={styles.formLoginRegisterPrepend}>
-                {props.iconiconInputPwdPlaceholder ?
-                  <FeatherIcon className={`${props.iconInputFormClassName}`} icon={`${props.iconInputMailPlaceholder}`} />
+                {props.iconMailPlaceholder ?
+                  <FeatherIcon className={`${props.iconInputFormClassName}`} icon={`${props.iconMailPlaceholder}`} />
                   :
                   <FeatherIcon className={`${props.iconInputFormClassName}`} icon='mail' />
                 }
               </span>
-              {props.inputMailPlaceholder ?
+              {props.mailPlaceholder ?
                 <input
                   type='email'
                   className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
-                  placeholder={`${props.inputMailPlaceholder}`}
+                  placeholder={`${props.mailPlaceholder}`}
                 />
                 :
                 <input
@@ -44,23 +47,23 @@ const Login = (props) => {
             </div>
             <div className='form-group position-relative'>
               <span className={styles.formLoginRegisterPrepend}>
-                {props.iconInputPwdPlaceholder ?
-                  <FeatherIcon className={`${props.iconInputFormClassName}`} icon={`${props.iconInputPwdPlaceholder}`} />
+                {props.iconPasswordPlaceholder ?
+                  <FeatherIcon className={`${props.iconInputFormClassName}`} icon={`${props.iconPasswordPlaceholder}`} />
                   :
                   <FeatherIcon className={`${props.iconInputFormClassName}`} icon='lock' />
                 }
               </span>
-              {props.iconInputPwdPlaceholder ?
+              {props.passwordPlaceholder ?
                 <input
                   type='password'
                   className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
-                  placeholder={`${props.iconInputPwdPlaceholder}`}
+                  placeholder={`${props.passwordPlaceholder}`}
                 />
                 :
                 <input
                   type='password'
                   className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
-                  placeholder='Adresse mail'
+                  placeholder='Mot de passe'
                 />
               }
             </div>
