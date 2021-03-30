@@ -136,7 +136,20 @@ html, body, #root { height: 100% ;}
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
+.numberInputCustom{
+  -moz-appearance: textfield;
+}
 
+.numberInputCustom::-webkit-inner-spin-button,
+.numberInputCustom::-webkit-outer-spin-button { 
+-webkit-appearance: none;
+margin:0;
+}
 
+.numberInputCustom::-o-inner-spin-button,
+.numberInputCustom::-o-outer-spin-button { 
+-o-appearance: none;
+margin:0
+}
 
 

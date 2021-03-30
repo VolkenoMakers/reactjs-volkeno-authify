@@ -51,66 +51,66 @@ const App = () => {
     
     // />
     
-    // <AuthRegister 
-    //   logoFormSrc={ '' }
-    //   titleTextLabel={ '' }
-    //   btnPrimaryTextLabel={ '' }
-    //   footerTextLabel={ '' }
-    //   footerLinkTextLabel={ '' }
-    //   footerLinkUrl={ '' }
-    //   firstNamePlaceholder={ '' }
-    //   iconFirstNamePlaceholder={ '' }
-    //   lastNamePlaceholder={ '' }
-    //   iconLastNamePlaceholder={ '' }
-    //   fullNamePlaceholder={ '' }
-    //   iconfullNamePlaceholder={ '' }
-    //   phonePlaceholder={ '' }
-    //   iconPhonePlaceholder={ '' }
-    //   mailPlaceholder={ '' }
-    //   iconMailPlaceholder={ '' }
-    //   passwordPlaceholder={ '' }
-    //   iconPasswordPlaceholder={ '' }
-    //   confirmPasswordPlaceholder={ '' }
-    //   iconConfirmPasswordPlaceholder={ '' }
-    //   useFullName={false}
-    //   usePhone
-    //   useLogo
-    //   formContainerClassName="form-container-register"
-    //   formClassName="form-register"
-    //   logoFormClassName="logo-formulaire-register"
-    //   titleFormClassName="title-form-register"
-    //   inputFormClassName="input-form-register"
-    //   iconInputFormClassName="icon-input-form-register"
-    //   btnPrimaryFormClassName="btn-form-register"
-    //   footerTextFormClassName="footer-form-register"
-    //   footerLinkFormClassName="footer-link-form-register"
-    // />
-    
-    <AuthLogin
+    <AuthRegister 
       logoFormSrc={ '' }
       titleTextLabel={ '' }
-      resetPwdTextLabel={ '' }
-      resetPwdUrlFormClassName={ '/' }
       btnPrimaryTextLabel={ '' }
       footerTextLabel={ '' }
       footerLinkTextLabel={ '' }
       footerLinkUrl={ '' }
+      firstNamePlaceholder={ '' }
+      iconFirstNamePlaceholder={ '' }
+      lastNamePlaceholder={ '' }
+      iconLastNamePlaceholder={ '' }
+      fullNamePlaceholder={ '' }
+      iconfullNamePlaceholder={ '' }
+      phonePlaceholder={ '' }
+      iconPhonePlaceholder={ '' }
       mailPlaceholder={ '' }
       iconMailPlaceholder={ '' }
       passwordPlaceholder={ '' }
       iconPasswordPlaceholder={ '' }
+      confirmPasswordPlaceholder={ '' }
+      iconConfirmPasswordPlaceholder={ '' }
+      useFullName={false}
+      usePhone
       useLogo
-      formContainerClassName="form-container-props"
-      formClassName="form-props"
-      logoFormClassName="logo-formulaire"
-      titleFormClassName="title-form-props"
-      inputFormClassName="input-form-props"
-      iconInputFormClassName="icon-input-form-props"
-      resetPwdLinkFormClassName="rpw-link-form-props"
-      btnPrimaryFormClassName="btn-form-props"
-      footerTextFormClassName="footer-form-props"
-      footerLinkFormClassName="footer-link-form-props"
+      formContainerClassName="form-container-register"
+      formClassName="form-register"
+      logoFormClassName="logo-formulaire-register"
+      titleFormClassName="title-form-register"
+      inputFormClassName="input-form-register"
+      iconInputFormClassName="icon-input-form-register"
+      btnPrimaryFormClassName="btn-form-register"
+      footerTextFormClassName="footer-form-register"
+      footerLinkFormClassName="footer-link-form-register"
     />
+    
+    // <AuthLogin
+    //   logoFormSrc={ '' }
+    //   titleTextLabel={ '' }
+    //   resetPwdTextLabel={ '' }
+    //   resetPwdUrlFormClassName={ '/' }
+    //   btnPrimaryTextLabel={ '' }
+    //   footerTextLabel={ '' }
+    //   footerLinkTextLabel={ '' }
+    //   footerLinkUrl={ '' }
+    //   mailPlaceholder={ '' }
+    //   iconMailPlaceholder={ '' }
+    //   passwordPlaceholder={ '' }
+    //   iconPasswordPlaceholder={ '' }
+    //   useLogo
+    //   formContainerClassName="form-container-props"
+    //   formClassName="form-props"
+    //   logoFormClassName="logo-formulaire"
+    //   titleFormClassName="title-form-props"
+    //   inputFormClassName="input-form-props"
+    //   iconInputFormClassName="icon-input-form-props"
+    //   resetPwdLinkFormClassName="rpw-link-form-props"
+    //   btnPrimaryFormClassName="btn-form-props"
+    //   footerTextFormClassName="footer-form-props"
+    //   footerLinkFormClassName="footer-link-form-props"
+    // />
     )
 }
 

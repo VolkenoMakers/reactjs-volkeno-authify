@@ -106,13 +106,13 @@ const Register = (props) => {
                 {props.phonePlaceholder ?
                   <input
                     type='number'
-                    className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
+                    className={`form-control ${styles.formLoginRegisterInput} ${styles.numberInputCustom} ${props.inputFormClassName}`}
                     placeholder={`${props.phonePlaceholder}`}
                   />
                   :
                   <input
                     type='number'
-                    className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
+                    className={`form-control ${styles.formLoginRegisterInput} ${styles.numberInputCustom} ${props.inputFormClassName}`}
                     placeholder='Téléphone'
                   />
                 }
