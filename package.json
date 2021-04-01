@@ -51,7 +51,11 @@
     "dist"
   ],
   "dependencies": {
+    "axios": "^0.21.1",
     "feather-icons-react": "^0.4.3",
-    "react-router-dom": "^5.2.0"
+    "lodash": "^4.17.21",
+    "react-hook-form": "^6.15.5",
+    "react-router-dom": "^5.2.0",
+    "react-toastify": "^7.0.3"
   }
 }
