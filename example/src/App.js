@@ -24,123 +24,173 @@ const onSuccessRegister = () =>{
 const onFailRegister = () =>{
   console.log("Failed registration")
 }
+const onSuccessRequestPassword = () =>{
+  console.log("Successful request password")
+}
+const onFailRequestPassword = () =>{
+  console.log("Failed request password")
+}
+const onSuccessResetPassword = () =>{
+  console.log("Successful reset password")
+}
+const onFailResetPassword = () =>{
+  console.log("Failed reset password")
+}
 
 const App = () => {
   return (
     
-    // <AuthResetPassword
-    //   logoFormSrc={ '' }
-    //   titleTextLabel={ '' }
-    //   btnPrimaryTextLabel={ '' }
-    //   resetCodePlaceholder={ '' }
-    //   iconResetCodePlaceholder={ '' }
-    //   passwordPlaceholder={ '' }
-    //   iconPasswordPlaceholder={ '' }
-    //   confirmPasswordPlaceholder={ '' }
-    //   iconConfirmPasswordPlaceholder={ '' }
-    //   useLogo
-    //   useResetCode={false}
-    //   formContainerClassName="form-container-reinit"
-    //   formClassName="form-reinit"
-    //   logoFormClassName="logo-formulaire-reinit"
-    //   titleFormClassName="title-form-reinit"
-    //   inputFormClassName="input-form-reinit"
-    //   iconInputFormClassName="icon-input-form-reinit"
-    //   btnPrimaryFormClassName="btn-form-reinit"
-    // />
-    
-    // <AuthRequestResetPassword
-    //   logoFormSrc={ '' }
-    //   titleTextLabel={ '' }
-    //   btnPrimaryTextLabel={ '' }
-    //   footerLinkTextLabel={ '' }
-    //   footerLinkUrl={ '' }
-    //   mailPlaceholder={ '' }
-    //   iconMailPlaceholder={ '' }
-    //   useLogo
-    //   formContainerClassName="form-container-request"
-    //   formClassName="form-request"
-    //   logoFormClassName="logo-formulaire"
-    //   titleFormClassName="title-form-request"
-    //   inputFormClassName="input-form-request"
-    //   iconInputFormClassName="icon-input-form-request"
-    //   btnPrimaryFormClassName="btn-form-request"
-    //   footerLinkFormClassName="footer-link-form-request"
-    
-    // />
-    
     <div className={'container'}>
       <div className={'row py-5'}>
         <div className='col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto'>
-          <AuthRegister 
+          <AuthResetPassword
             logoFormSrc={ '' }
             titleTextLabel={ '' }
             btnPrimaryTextLabel={ '' }
-            footerTextLabel={ '' }
-            footerLinkTextLabel={ '' }
-            footerLinkUrl={ '' }
-            firstNamePlaceholder={ '' }
-            iconFirstNamePlaceholder={ '' }
-            addressPlaceholder={ '' }
-            iconAddressPlaceholder={ '' }
-            lastNamePlaceholder={ '' }
-            iconLastNamePlaceholder={ '' }
-            fullNamePlaceholder={ '' }
-            iconfullNamePlaceholder={ '' }
-            phonePlaceholder={ '' }
-            iconPhonePlaceholder={ '' }
-            mailPlaceholder={ '' }
-            iconMailPlaceholder={ '' }
+            resetCodePlaceholder={ '' }
+            resetCodeName={ 'reset_code' }
+            resetCodeRequiredTextError={ '' }
+            iconResetCodePlaceholder={ '' }
             passwordPlaceholder={ '' }
             iconPasswordPlaceholder={ '' }
             confirmPasswordPlaceholder={ '' }
             iconConfirmPasswordPlaceholder={ '' }
-            useFullName={false}
-            usePhone={false}
-            useAddress
             useLogo
-            firstnameName={ 'first_name' }
-            lastnameName={ 'last_name' }
-            fullnameName={ 'fullname' }
-            phoneName={ 'phone' }
-            addressName={ 'adresse' }
-            emailName={ 'email' }
+            useResetCode={false}
+            formContainerClassName="form-container-reinit"
+            formClassName="form-reinit"
+            logoFormClassName="logo-formulaire-reinit"
+            titleFormClassName="title-form-reinit"
+            inputFormClassName="input-form-reinit"
+            iconInputFormClassName="icon-input-form-reinit"
+            btnPrimaryFormClassName="btn-form-reinit"
+            toastTextClassName={ "password-reset" }
+            setApiBase={ 'baseApi' }
+            setEndpoint={ 'baseEndpoint' }
+            onSuccessRequestPassword={ onSuccessRequestPassword }
+            onFailRequestPassword={ onFailRequestPassword }
+            toastSuccessText={ '' }
+            toastErrorText={ '' }
             passwordName={ 'password' }
             confirmPasswordName={ 'password_confirm' }
-            fullnameRequiredTextError= { '' }
-            fullnameValidTextError= { '' }
-            firstnameRequiredTextError= { '' }
-            firstnameValidTextError= { '' }
-            lastnameRequiredTextError= { '' }
-            lastnameValidTextError= { '' }
-            phoneRequiredTextError= { '' }
-            addressRequiredTextError= { '' }
-            emailRequiredTextError= { '' }
-            emailValidTextError= { '' }
             passwordRequiredTextError= { '' }
             confirmPasswordRequiredTextError= { '' }
             confirmPasswordSameTextError= { '' }
-            formContainerClassName="form-container-register"
-            formClassName="form-register"
-            logoFormClassName="logo-formulaire-register"
-            titleFormClassName="title-form-register"
-            inputFormClassName="input-form-register"
-            iconInputFormClassName="icon-input-form-register"
-            btnPrimaryFormClassName="btn-form-register"
-            footerTextFormClassName="footer-form-register"
-            footerLinkFormClassName="footer-link-form-register"
-            toastTextClassName="toast-text-props"
-            setApiBase={'https://backend-marketplace.withvolkeno.com/api/'}
-            setEndpoint={'auth/register/'}
-            onSuccessRegister={ onSuccessRegister }
-            onFailRegister={ onFailRegister }
-            toastSuccessText={ '' }
-            toastErrorText={ '' }
           />
         </div>
       </div>
     </div>
     
+    // <div className={'container'}>
+    //   <div className={'row py-5'}>
+    //     <div className='col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto'>
+    //       <AuthRequestResetPassword
+    //         logoFormSrc={ '' }
+    //         titleTextLabel={ '' }
+    //         btnPrimaryTextLabel={ '' }
+    //         footerLinkTextLabel={ '' }
+    //         footerLinkUrl={ '' }
+    //         mailPlaceholder={ '' }
+    //         iconMailPlaceholder={ '' }
+    //         useLogo
+    //         formContainerClassName="form-container-request"
+    //         formClassName="form-request"
+    //         logoFormClassName="logo-formulaire"
+    //         titleFormClassName="title-form-request"
+    //         inputFormClassName="input-form-request"
+    //         iconInputFormClassName="icon-input-form-request"
+    //         btnPrimaryFormClassName="btn-form-request"
+    //         footerTextFormClassName="footer-text-form-request"
+    //         footerLinkFormClassName="footer-link-form-request"
+    //         toastTextClassName="toast-request"
+    //         setApiBase={ "baseApi" }
+    //         setEndpoint={ "baseEndpoint" }
+    //         onSuccessRequestPassword={ onSuccessRequestPassword }
+    //         onFailRequestPassword={ onFailRequestPassword }
+    //         toastSuccessText={ "" }
+    //         toastErrorText={ "" }
+    //         emailRequiredTextError= { '' }
+    //         emailValidTextError= { '' }
+    //         emailName={ 'email' }
+
+    //       />
+    //     </div>
+    //   </div>
+    // </div>
+    
+    // <div className={'container'}>
+    //   <div className={'row py-5'}>
+    //     <div className='col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto'>
+    //       <AuthRegister 
+    //         logoFormSrc={ '' }
+    //         titleTextLabel={ '' }
+    //         btnPrimaryTextLabel={ '' }
+    //         footerTextLabel={ '' }
+    //         footerLinkTextLabel={ '' }
+    //         footerLinkUrl={ '' }
+    //         firstNamePlaceholder={ '' }
+    //         iconFirstNamePlaceholder={ '' }
+    //         addressPlaceholder={ '' }
+    //         iconAddressPlaceholder={ '' }
+    //         lastNamePlaceholder={ '' }
+    //         iconLastNamePlaceholder={ '' }
+    //         fullNamePlaceholder={ '' }
+    //         iconfullNamePlaceholder={ '' }
+    //         phonePlaceholder={ '' }
+    //         iconPhonePlaceholder={ '' }
+    //         mailPlaceholder={ '' }
+    //         iconMailPlaceholder={ '' }
+    //         passwordPlaceholder={ '' }
+    //         iconPasswordPlaceholder={ '' }
+    //         confirmPasswordPlaceholder={ '' }
+    //         iconConfirmPasswordPlaceholder={ '' }
+    //         useFullName={false}
+    //         usePhone={false}
+    //         useAddress
+    //         useLogo
+    //         firstnameName={ 'first_name' }
+    //         lastnameName={ 'last_name' }
+    //         fullnameName={ 'fullname' }
+    //         phoneName={ 'phone' }
+    //         addressName={ 'adresse' }
+    //         emailName={ 'email' }
+    //         passwordName={ 'password' }
+    //         confirmPasswordName={ 'password_confirm' }
+    //         fullnameRequiredTextError= { '' }
+    //         fullnameValidTextError= { '' }
+    //         firstnameRequiredTextError= { '' }
+    //         firstnameValidTextError= { '' }
+    //         lastnameRequiredTextError= { '' }
+    //         lastnameValidTextError= { '' }
+    //         phoneRequiredTextError= { '' }
+    //         addressRequiredTextError= { '' }
+    //         emailRequiredTextError= { '' }
+    //         emailValidTextError= { '' }
+    //         passwordRequiredTextError= { '' }
+    //         confirmPasswordRequiredTextError= { '' }
+    //         confirmPasswordSameTextError= { '' }
+    //         formContainerClassName="form-container-register"
+    //         formClassName="form-register"
+    //         logoFormClassName="logo-formulaire-register"
+    //         titleFormClassName="title-form-register"
+    //         inputFormClassName="input-form-register"
+    //         iconInputFormClassName="icon-input-form-register"
+    //         btnPrimaryFormClassName="btn-form-register"
+    //         footerTextFormClassName="footer-form-register"
+    //         footerLinkFormClassName="footer-link-form-register"
+    //         toastTextClassName="toast-text-props"
+    //         setApiBase={'https://backend-marketplace.withvolkeno.com/api/'}
+    //         setEndpoint={'auth/register/'}
+    //         onSuccessRegister={ onSuccessRegister }
+    //         onFailRegister={ onFailRegister }
+    //         toastSuccessText={ '' }
+    //         toastErrorText={ '' }
+    //       />
+    //     </div>
+    //   </div>
+    // </div>
+    
+  
     
     // <div className={'container'}>
     //   <div className={'row py-5'}>

@@ -291,7 +291,7 @@ export default function Login (props) {
         </p>
     
       }
-      {setLoginSuccess ?
+      {setLoginSuccess || setLoginError ?
         <ToastContainer className={`${styles.toastifyText} ${props.toastTextClassName}`} autoClose={2500} />
         :
         <></>

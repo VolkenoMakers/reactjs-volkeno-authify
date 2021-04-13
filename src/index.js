@@ -136,7 +136,18 @@ export const AuthRequestResetPassword = (props) => {
       inputFormClassName={ props.inputFormClassName }
       iconInputFormClassName={ props.iconInputFormClassName }
       btnPrimaryFormClassName={ props.btnPrimaryFormClassName }
+      footerTextFormClassName={ props.footerTextFormClassName }
       footerLinkFormClassName={ props.footerLinkFormClassName } 
+      toastTextClassName={ props.toastTextClassName }
+      setApiBase={ props.setApiBase }
+      setEndpoint={ props.setEndpoint }
+      onSuccessRequestPassword={ props.onSuccessRequestPassword }
+      onFailRequestPassword={ props.onFailRequestPassword }
+      toastSuccessText={ props.toastSuccessText }
+      toastErrorText={ props.toastErrorText }
+      emailRequiredTextError= { props.emailRequiredTextError }
+      emailValidTextError= { props.emailValidTextError }
+      emailName={ props.emailName }
     />
   )
 }
@@ -162,6 +173,20 @@ export const AuthResetPassword = (props) => {
       inputFormClassName={ props.inputFormClassName }
       iconInputFormClassName={ props.iconInputFormClassName }
       btnPrimaryFormClassName={ props.btnPrimaryFormClassName }
+      toastTextClassName={ props.toastTextClassName }
+      setApiBase={ props.setApiBase }
+      setEndpoint={ props.setEndpoint }
+      onSuccessRequestPassword={ props.onSuccessRequestPassword }
+      onFailRequestPassword={ props.onFailRequestPassword }
+      toastSuccessText={ props.toastSuccessText }
+      toastErrorText={ props.toastErrorText }
+      resetCodeName={ props.resetCodeName }
+      resetCodeRequiredTextError={ props.resetCodeRequiredTextError }
+      passwordName={ props.passwordName }
+      confirmPasswordName={ props.confirmPasswordName }
+      passwordRequiredTextError= { props.passwordRequiredTextError }
+      confirmPasswordRequiredTextError= { props.confirmPasswordRequiredTextError }
+      confirmPasswordSameTextError= { props.confirmPasswordSameTextError }
     />
   )
 }
