@@ -189,11 +189,11 @@ export default function Login (props) {
       </div>
       
       {props.resetPwdTextLabel ?
-        <a className={`${styles.formLoginRegisterForgotPasswordLink} ${props.resetPwdLinkFormClassName}`} href={`${props.resetPwdUrlFormClassName}`}>
+        <a className={`${styles.formLoginRegisterForgotPasswordLink} ${props.resetPwdLinkFormClassName}`} href={`${props.resetPwdUrl}`}>
           {props.resetPwdTextLabel}
         </a>
         :
-        <a className={`${styles.formLoginRegisterForgotPasswordLink} ${props.resetPwdLinkFormClassName}`} href={`${props.resetPwdUrlFormClassName}`}>
+        <a className={`${styles.formLoginRegisterForgotPasswordLink} ${props.resetPwdLinkFormClassName}`} href={`${props.resetPwdUrl}`}>
           Mot de passe oublié ?
         </a>
       }

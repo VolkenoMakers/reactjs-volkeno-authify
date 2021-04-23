@@ -14,7 +14,7 @@ export const AuthLogin = (props) => {
       passwordPlaceholder={ props.passwordPlaceholder }
       iconPasswordPlaceholder={ props.iconPasswordPlaceholder }
       resetPwdTextLabel={ props.resetPwdTextLabel }
-      resetPwdUrlFormClassName={ props.resetPwdUrlFormClassName }
+      resetPwdUrl={ props.resetPwdUrl }
       btnPrimaryTextLabel={ props.btnPrimaryTextLabel }
       btnPrimaryProgressTextLabel={ props.btnPrimaryProgressTextLabel }
       footerTextLabel={ props.footerTextLabel }
@@ -176,8 +176,8 @@ export const AuthResetPassword = (props) => {
       toastTextClassName={ props.toastTextClassName }
       setApiBase={ props.setApiBase }
       setEndpoint={ props.setEndpoint }
-      onSuccessRequestPassword={ props.onSuccessRequestPassword }
-      onFailRequestPassword={ props.onFailRequestPassword }
+      onSuccessResetPassword={ props.onSuccessResetPassword }
+      onFailResetPassword={ props.onFailResetPassword }
       toastSuccessText={ props.toastSuccessText }
       toastErrorText={ props.toastErrorText }
       resetCodeName={ props.resetCodeName }

@@ -39,7 +39,7 @@ const ResetPassword = (props) => {
             
             setTimeout(() => {
               setResetPasswordSuccess(false)
-              props.onSuccessRequestPassword()
+              props.onSuccessResetPassword()
             }, 2500);
           }
         })
@@ -55,7 +55,7 @@ const ResetPassword = (props) => {
             
             setTimeout(() => {
               setResetPasswordError(false)
-              props.onFailRequestPassword()
+              props.onFailResetPassword()
             }, 2500);
           }
         })

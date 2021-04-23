@@ -40,46 +40,46 @@ const onFailResetPassword = () =>{
 const App = () => {
   return (
     
-    <div className={'container'}>
-      <div className={'row py-5'}>
-        <div className='col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto'>
-          <AuthResetPassword
-            logoFormSrc={ '' }
-            titleTextLabel={ '' }
-            btnPrimaryTextLabel={ '' }
-            resetCodePlaceholder={ '' }
-            resetCodeName={ 'reset_code' }
-            resetCodeRequiredTextError={ '' }
-            iconResetCodePlaceholder={ '' }
-            passwordPlaceholder={ '' }
-            iconPasswordPlaceholder={ '' }
-            confirmPasswordPlaceholder={ '' }
-            iconConfirmPasswordPlaceholder={ '' }
-            useLogo
-            useResetCode={false}
-            formContainerClassName="form-container-reinit"
-            formClassName="form-reinit"
-            logoFormClassName="logo-formulaire-reinit"
-            titleFormClassName="title-form-reinit"
-            inputFormClassName="input-form-reinit"
-            iconInputFormClassName="icon-input-form-reinit"
-            btnPrimaryFormClassName="btn-form-reinit"
-            toastTextClassName={ "password-reset" }
-            setApiBase={ 'baseApi' }
-            setEndpoint={ 'baseEndpoint' }
-            onSuccessRequestPassword={ onSuccessRequestPassword }
-            onFailRequestPassword={ onFailRequestPassword }
-            toastSuccessText={ '' }
-            toastErrorText={ '' }
-            passwordName={ 'password' }
-            confirmPasswordName={ 'password_confirm' }
-            passwordRequiredTextError= { '' }
-            confirmPasswordRequiredTextError= { '' }
-            confirmPasswordSameTextError= { '' }
-          />
-        </div>
-      </div>
-    </div>
+    // <div className={'container'}>
+    //   <div className={'row py-5'}>
+    //     <div className='col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto'>
+    //       <AuthResetPassword
+    //         logoFormSrc={ '' }
+    //         titleTextLabel={ '' }
+    //         btnPrimaryTextLabel={ '' }
+    //         resetCodePlaceholder={ '' }
+    //         resetCodeName={ 'reset_code' }
+    //         resetCodeRequiredTextError={ '' }
+    //         iconResetCodePlaceholder={ '' }
+    //         passwordPlaceholder={ '' }
+    //         iconPasswordPlaceholder={ '' }
+    //         confirmPasswordPlaceholder={ '' }
+    //         iconConfirmPasswordPlaceholder={ '' }
+    //         useLogo
+    //         useResetCode={false}
+    //         formContainerClassName="form-container-reinit"
+    //         formClassName="form-reinit"
+    //         logoFormClassName="logo-formulaire-reinit"
+    //         titleFormClassName="title-form-reinit"
+    //         inputFormClassName="input-form-reinit"
+    //         iconInputFormClassName="icon-input-form-reinit"
+    //         btnPrimaryFormClassName="btn-form-reinit"
+    //         toastTextClassName={ "password-reset" }
+    //         setApiBase={ 'baseApi' }
+    //         setEndpoint={ 'baseEndpoint' }
+    //         onSuccessResetPassword={ onSuccessResetPassword }
+    //         onFailResetPassword={ onFailResetPassword }
+    //         toastSuccessText={ '' }
+    //         toastErrorText={ '' }
+    //         passwordName={ 'password' }
+    //         confirmPasswordName={ 'password_confirm' }
+    //         passwordRequiredTextError= { '' }
+    //         confirmPasswordRequiredTextError= { '' }
+    //         confirmPasswordSameTextError= { '' }
+    //       />
+    //     </div>
+    //   </div>
+    // </div>
     
     // <div className={'container'}>
     //   <div className={'row py-5'}>
@@ -192,51 +192,51 @@ const App = () => {
     
   
     
-    // <div className={'container'}>
-    //   <div className={'row py-5'}>
-    //     <div className={`col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto`}>
-    //       <AuthLogin
-    //         logoFormSrc={ '' }
-    //         titleTextLabel={ '' }
-    //         resetPwdTextLabel={ '' }
-    //         resetPwdUrlFormClassName={ '/' }
-    //         btnPrimaryTextLabel={ '' }
-    //         btnPrimaryProgressTextLabel={ '' }
-    //         footerTextLabel={ '' }
-    //         footerLinkTextLabel={ '' }
-    //         footerLinkUrl={ '' }
-    //         mailPlaceholder={ '' }
-    //         iconMailPlaceholder={ '' }
-    //         passwordPlaceholder={ '' }
-    //         iconPasswordPlaceholder={ '' }
-    //         emailRequiredTextError= { '' }
-    //         emailValidTextError= { '' }
-    //         passwordRequiredTextError= { '' }
-    //         useLogo
-    //         emailName={ 'email' }
-    //         passwordName={ 'password' }
-    //         formContainerClassName="form-container-props"
-    //         formClassName="form-props"
-    //         logoFormClassName="logo-formulaire"
-    //         titleFormClassName="title-form-props"
-    //         inputFormClassName="input-form-props"
-    //         iconInputFormClassName="icon-input-form-props"
-    //         resetPwdLinkFormClassName="rpw-link-form-props"
-    //         btnPrimaryFormClassName="btn-form-props"
-    //         footerTextFormClassName="footer-form-props"
-    //         footerLinkFormClassName="footer-link-form-props"
-    //         toastTextClassName="toast-text-props"
-    //         setApiBase={'http://159.89.32.58:8888/api/'}
-    //         setEndpoint={'auth/login/'}
-    //         keyToken={ 'userToken' }
-    //         onSuccessLogin={ onSuccessLogin }
-    //         onFailLogin={ onFailLogin }
-    //         toastSuccessText={ '' }
-    //         toastErrorText={ '' }
-    //       />
-    //     </div>
-    //   </div>
-    // </div>
+    <div className={'container'}>
+      <div className={'row py-5'}>
+        <div className={`col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto`}>
+          <AuthLogin
+            logoFormSrc={ '' }
+            titleTextLabel={ '' }
+            resetPwdTextLabel={ '' }
+            resetPwdUrl={ '/' }
+            btnPrimaryTextLabel={ '' }
+            btnPrimaryProgressTextLabel={ '' }
+            footerTextLabel={ '' }
+            footerLinkTextLabel={ '' }
+            footerLinkUrl={ '' }
+            mailPlaceholder={ '' }
+            iconMailPlaceholder={ '' }
+            passwordPlaceholder={ '' }
+            iconPasswordPlaceholder={ '' }
+            emailRequiredTextError= { '' }
+            emailValidTextError= { '' }
+            passwordRequiredTextError= { '' }
+            useLogo
+            emailName={ 'email' }
+            passwordName={ 'password' }
+            formContainerClassName="form-container-props"
+            formClassName="form-props"
+            logoFormClassName="logo-formulaire"
+            titleFormClassName="title-form-props"
+            inputFormClassName="input-form-props"
+            iconInputFormClassName="icon-input-form-props"
+            resetPwdLinkFormClassName="rpw-link-form-props"
+            btnPrimaryFormClassName="btn-form-props"
+            footerTextFormClassName="footer-form-props"
+            footerLinkFormClassName="footer-link-form-props"
+            toastTextClassName="toast-text-props"
+            setApiBase={'http://159.89.32.58:8888/api/'}
+            setEndpoint={'auth/login/'}
+            keyToken={ 'userToken' }
+            onSuccessLogin={ onSuccessLogin }
+            onFailLogin={ onFailLogin }
+            toastSuccessText={ '' }
+            toastErrorText={ '' }
+          />
+        </div>
+      </div>
+    </div>
     )
 }
 
