@@ -11,10 +11,7 @@
     "reactjs login",
     "reactjs register",
     "reactjs reset password",
-    "reactjs reset password validation"
-  ],
-  "license": "MIT",
-  "keywords": [
+    "reactjs reset password validation",
     "volkeno", 
     "react", 
     "react-js", 
@@ -28,6 +25,7 @@
     "senegal", 
     "volkeno-dev"
   ],
+  "license": "MIT",
   "repository": "VolkenoMakers/reactjs-volkeno-authify",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
