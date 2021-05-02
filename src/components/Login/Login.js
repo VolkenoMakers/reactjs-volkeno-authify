@@ -5,6 +5,7 @@ import FeatherIcon from 'feather-icons-react'
 import { useForm } from "react-hook-form"
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
+import { useLogin } from './authProvider'
 
 export default function Login (props) {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -12,54 +13,32 @@ export default function Login (props) {
   const [loginSuccess, setLoginSuccess] = useState(false)
   const [loginError, setLoginError] = useState(false)
   
+  const sideEffectOnsuccess = ({
+    toastSuccessText: string = 'Bravo! Vous êtes connecté.'
+  }) => {
+    setLoginInProgress(false)
+    toast.success(props.toastSuccessText || toastSuccessText)
+    setLoginSuccess(true)
+    props.onSuccessLogin()
+   
+  }
+
+  const sideEffectOnfailure = ({
+    toastErrorText: string = 'Oups! Une erreur est survenu. Veuillez réessayer!'
+  }) => {
+    toast.error(props.toastErrorText || toastErrorText)
+    loginError(true)
+    props.onFailLogin()
+  }
+  
   const onSubmit = (data) => {
     setLoginInProgress(true)
-    
-    let setApiBase = props.setApiBase
-    let setEndpoint = props.setEndpoint
   
-    if (setApiBase && setEndpoint) {
-      var url = setApiBase+setEndpoint
-      
-      axios.post(url, data)
-        .then(response => {
-          setLoginInProgress(false)
-          setLoginSuccess(true)
-          if ((response.status >= 200 || response.status <= 299) || (response.data.success) || (response.success)) {
-            if (props.toastSuccessText) {
-              toast.success(`${props.toastSuccessText}`);
-            } else {
-              toast.success("Bravo! Vous êtes connecté.");
-            }
-            
-            window.sessionStorage.setItem(`${props.keyToken}`, response.data.token)
-            
-            setTimeout(() => {
-              setLoginSuccess(false)
-              props.onSuccessLogin()
-            }, 2500);
-          }
-        })
-        .catch(error => {
-          setLoginError(true)
-          setLoginInProgress(false)
-          if(error){
-            if (props.toastErrorText) {
-              toast.error(`${props.toastErrorText}`);
-            } else {
-              toast.error("Oups! Une erreur est survenu. Veuillez réessayer!");
-            }
-            
-            setTimeout(() => {
-              setLoginError(false)
-              props.onFailLogin()
-            }, 2500);
-          }
-        })
+    if (!(props.setApiBase && props.setEndpoint)) {
+      return toast.error("Veuillez renseigner la base de l'api ainsi que le endpoint")
     }
-    else{
-      console.log("Veuillez renseigner la base de l'api ainsi que le endpoint")
-    }
+    useLogin(data, setApiBase, setEndpoint, sideEffectOnsuccess, sideEffectOnfailure)
+
   };
   
   return (
@@ -73,27 +52,18 @@ export default function Login (props) {
         <span></span>
       }
       <span className={`mb-sm-4 mb-3 ${styles.formLoginRegisterTitle} ${props.titleFormClassName}`}>
-        {props.titleTextLabel ?
-          props.titleTextLabel
-          :
-          <span>Connectez-vous</span>
-        }
+          <span>{titleTextLabel || "Connectez-vous"}</span>
       </span>
       <div className='form-group position-relative'>
         <span className={styles.formLoginRegisterPrepend}>
-          {props.iconMailPlaceholder ?
-            <FeatherIcon className={`${props.iconInputFormClassName}`} icon={`${props.iconMailPlaceholder}`} />
-            :
-            <FeatherIcon className={`${props.iconInputFormClassName}`} icon='mail' />
-          }
+            <FeatherIcon className={`${props.iconInputFormClassName}`} icon={props.iconMailPlaceholder || 'mail'} />
         </span>
-        {props.mailPlaceholder ?
           <div>
             <input
               type='email'
               name={props.emailName}
               className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
-              placeholder={`${props.mailPlaceholder}`}
+              placeholder={props.mailPlaceholder || 'Adresse mail'}
               maxLength="" 
               ref={register({
                 required: true,
@@ -101,196 +71,64 @@ export default function Login (props) {
               })}
             />
             {_.get(`${props.emailName}.type`, errors) === "required" && (
-              props.emailRequiredTextError ?
-                <p className={`${styles.textDangerRVA}`}>{ props.emailRequiredTextError }</p>
-              :
-                <p className={`${styles.textDangerRVA}`}>Ce champ est requis!</p>
+                <p className={`${styles.textDangerRVA}`}>{ props.emailRequiredTextError || "Ce champ est requis!" }</p>
             )}
             {_.get(`${props.emailName}.type`, errors) === "pattern" && (
-              props.emailValidTextError ?
-                <p className={`${styles.textDangerRVA}`}>{ props.emailValidTextError }</p>
-              :
-                <p className={`${styles.textDangerRVA}`}>Veuillez saisir une adresse e-mail valide!</p>
+                <p className={`${styles.textDangerRVA}`}>{ props.emailValidTextError || "Veuillez saisir une adresse e-mail valide!" }</p>
             )}
           </div>
-          :
-          <div>
-            <input
-              type='email'
-              name={props.emailName}
-              className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
-              placeholder='Adresse mail'
-              maxLength="" 
-              ref={register({
-                required: true,
-                pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-              })}
-            />
-            {_.get(`${props.emailName}.type`, errors) === "required" && (
-              props.emailRequiredTextError ?
-                <p className={`${styles.textDangerRVA}`}>{ props.emailRequiredTextError }</p>
-              :
-                <p className={`${styles.textDangerRVA}`}>Ce champ est requis!</p>
-            )}
-            {_.get(`${props.emailName}.type`, errors) === "pattern" && (
-              props.emailValidTextError ?
-                <p className={`${styles.textDangerRVA}`}>{ props.emailValidTextError }</p>
-              :
-                <p className={`${styles.textDangerRVA}`}>Veuillez saisir une adresse e-mail valide!</p>
-            )}
-          </div>
-        }
       </div>
       <div className='form-group position-relative'>
         <span className={styles.formLoginRegisterPrepend}>
-          {props.iconPasswordPlaceholder ?
-            <FeatherIcon className={`${props.iconInputFormClassName}`} icon={`${props.iconPasswordPlaceholder}`} />
-            :
-            <FeatherIcon className={`${props.iconInputFormClassName}`} icon='lock' />
-          }
+            <FeatherIcon className={`${props.iconInputFormClassName}`} icon={props.iconPasswordPlaceholder || 'lock'} />
         </span>
-        {props.passwordPlaceholder ?
           <div>
             <input
               type='password'
               name={props.passwordName}
               className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
-              placeholder={`${props.passwordPlaceholder}`}
+              placeholder={props.passwordPlaceholder || "Mot de passe"}
               ref={register({
                 required: true,
               })}
             />
             {_.get(`${props.passwordName}.type`, errors) === "required" && (
-              props.passwordRequiredTextError ?
-                <p className={`${styles.textDangerRVA}`}>{ props.passwordRequiredTextError }</p>
-              :
-                <p className={`${styles.textDangerRVA}`}>Ce champ est requis!</p>
+                <p className={`${styles.textDangerRVA}`}>{ props.passwordRequiredTextError || "Ce champ est requis!" }</p>
             )}
           </div>
-          :
-          <div>
-            <input
-              type='password'
-              name={props.passwordName}
-              className={`form-control ${styles.formLoginRegisterInput} ${props.inputFormClassName}`}
-              placeholder="Mot de passe"
-              ref={register({
-                required: true,
-              })}
-            />
-            {_.get(`${props.passwordName}.type`, errors) === "required" && (
-              props.passwordRequiredTextError ?
-                <p className={`${styles.textDangerRVA}`}>{ props.passwordRequiredTextError }</p>
-              :
-                <p className={`${styles.textDangerRVA}`}>Ce champ est requis!</p>
-            )}
-          </div>
-        }
+         
       </div>
-      
-      {props.resetPwdTextLabel ?
         <a className={`${styles.formLoginRegisterForgotPasswordLink} ${props.resetPwdLinkFormClassName}`} href={`${props.resetPwdUrl}`}>
-          {props.resetPwdTextLabel}
+          {props.resetPwdTextLabel || "Mot de passe oublié ?"}
         </a>
-        :
-        <a className={`${styles.formLoginRegisterForgotPasswordLink} ${props.resetPwdLinkFormClassName}`} href={`${props.resetPwdUrl}`}>
-          Mot de passe oublié ?
-        </a>
-      }
 
-      {props.btnPrimaryTextLabel ?
         <div>
           {loginInProgress ?
-            props.btnPrimaryProgressTextLabel ?
               <button
                 className={`mt-5 mb-4 ${styles.formLoginRegisterbtnPrimary} ${props.btnPrimaryFormClassName}`}
                 disabled
               > 
-                {props.btnPrimaryProgressTextLabel}
-              </button>
-              :
-              <button
-                className={`mt-5 mb-4 ${styles.formLoginRegisterbtnPrimary} ${props.btnPrimaryFormClassName}`}
-                disabled
-              > 
-                Connexion en cours ...
+                {props.btnPrimaryProgressTextLabel || "Connexion en cours ..."}
               </button>
             :
             <button
               className={`mt-5 mb-4 ${styles.formLoginRegisterbtnPrimary} ${props.btnPrimaryFormClassName}`}
             > 
-              {props.btnPrimaryTextLabel}
+              {props.btnPrimaryTextLabel || "Connexion"}
             </button>
           }
         </div>
-        :
-        <div>
-          {loginInProgress ?
-            props.btnPrimaryProgressTextLabel ?
-              <button
-                className={`mt-5 mb-4 ${styles.formLoginRegisterbtnPrimary} ${props.btnPrimaryFormClassName}`}
-                disabled
-              > 
-                {props.btnPrimaryProgressTextLabel}
-              </button>
-              :
-              <button
-                className={`mt-5 mb-4 ${styles.formLoginRegisterbtnPrimary} ${props.btnPrimaryFormClassName}`}
-                disabled
-              > 
-                Connexion en cours ...
-              </button>
-            :
-            <button
-              className={`mt-5 mb-4 ${styles.formLoginRegisterbtnPrimary} ${props.btnPrimaryFormClassName}`}
-            > 
-              Connexion
-            </button>
-          }
-        </div>
-      }
-      {props.footerTextLabel ?
         <p className={`${styles.formLoginRegisterFooter} ${props.footerTextFormClassName}`}>
-          {props.footerTextLabel}
+          {props.footerTextLabel || " Pas encore de compte ?"}
           
-          {props.footerLinkTextLabel ?
           <a
             href='#'
             className={`ml-1 ${styles.formLoginRegisterFooterLink} ${props.footerLinkFormClassName}`}
           >
-            {props.footerLinkTextLabel}
+            {props.footerLinkTextLabel || "S’inscrire"}
           </a>
-          :
-          <a
-            href='#'
-            className={`ml-1 ${styles.formLoginRegisterFooterLink} ${props.footerLinkFormClassName}`}
-          >
-            <span>S’inscrire</span>
-          </a>
-          }
-        </p>
-        :
-        <p className={`${styles.formLoginRegisterFooter} ${props.footerTextFormClassName}`}>
-          Pas encore de compte ?
-          
-          {props.footerLinkTextLabel ?
-          <a
-            href={props.footerLinkUrl}
-            className={`ml-1 ${styles.formLoginRegisterFooterLink} ${props.footerLinkFormClassName}`}
-          >
-            {props.footerLinkTextLabel}
-          </a>
-          :
-          <a
-            href={props.footerLinkUrl}
-            className={`ml-1 ${styles.formLoginRegisterFooterLink} ${props.footerLinkFormClassName}`}
-          >
-            <span>S’inscrire</span>
-          </a>
-          }
         </p>
     
-      }
       {setLoginSuccess || setLoginError ?
         <ToastContainer className={`${styles.toastifyText} ${props.toastTextClassName}`} autoClose={2500} />
         :
@@ -299,4 +137,4 @@ export default function Login (props) {
     </form>
   )
 }
-// export default Login
+
